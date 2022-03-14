@@ -1,10 +1,10 @@
 import React from "react";
 
-const Header = (props1) =>
+const Header = (props) =>
 {
     return (
         <div>
-            <h1>{props1.go}</h1>
+            <h1>{props.go}</h1>
         </div>
     )
 }
