@@ -3,9 +3,13 @@ import React from "react";
 const StatisticLine = (props) =>
 {
     return (
-        <p>
-            {props.text} {props.value} {props.text4}
-        </p>
+        
+            <tr>
+                <td>{props.text}</td>
+
+                <td>{props.value} {props.text4}</td>
+            </tr>
+        
     )
 }
 
