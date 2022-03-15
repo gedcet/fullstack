@@ -1,6 +1,4 @@
-import Content from "./Content"
-import Header from "./Header"
-import Total from "./Total"
+import Course from "./Course"
 
 const App = () =>
 {
@@ -18,15 +16,17 @@ const App = () =>
       {
         name: 'State of a component',
         exercises: 14
+      },
+      {
+        name: 'Redux',
+        exercises: 100
       }
     ]
   }
 
   return (
     <div>
-      <Header go={course.name} />
-       <Content parts={course.parts} />
-      <Total parts={course.parts} /> 
+      <Course course={course} />
     </div>
   )
 }

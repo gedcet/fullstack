@@ -1,0 +1,14 @@
+git add * //adina visus failus i gita
+git commit -m "1.11" // commitina su komentaru vietoje
+git push  //cia jau deda i debesi
+
+git config -l 
+
+git rm -* //resetina
+
+//naujas reacto projektas
+npx create-react-app anecdotes
+//paskui reikia pasitikrinti kurioje mes esame direktorijoje
+npm start
+
+ npm install // sukuria node_modules direktorija
