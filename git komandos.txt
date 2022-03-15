@@ -8,7 +8,7 @@ git rm -* //resetina
 
 //naujas reacto projektas
 npx create-react-app anecdotes
-//paskui reikia pasitikrinti kurioje mes esame direktorijoje
-npm start
+//paskui reikia pasitikrinti kurioje mes esame direktorijoje 
+npm run start//uzleidzia serveri localhost:30000
 
- npm install // sukuria node_modules direktorija
+npm install // sukuria node_modules direktorija
