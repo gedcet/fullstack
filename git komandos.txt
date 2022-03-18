@@ -6,8 +6,11 @@ git config -l
 
 git rm -* //resetina
 
-//naujas reacto projektas
-npx create-react-app anecdotes
+git log //paskutiniai zingsniai
+
+npx create-react-app anecdotes //naujas reacto projektas
+npx create-react-app phonebook
+
 //paskui reikia pasitikrinti kurioje mes esame direktorijoje 
 npm run start//uzleidzia serveri localhost:30000
 
