@@ -10,7 +10,18 @@ const App = () =>
     event.preventDefault();//neperkrauna puslapio
     //console.log(event.target)
     const arrayCopy = [...persons];
+
+    const dubl = 0;
+    for (let i = 0; i < persons.length; i++)
+    {
+      if (newName === persons[i].name)
+      {
+        alert("tokia reiksme yra ")
+        return
+      }
+    }
     arrayCopy.push({ name: newName });
+
     setPersons(arrayCopy);
   }
   const handleChange = (event) =>

@@ -8,15 +8,6 @@ const Total = (props1) =>
         totalSk = totalSk + props1.parts[i].exercises;
     }
     
-    // let totalSkwithReduse = props1.parts.reduce((a, b, c) =>
-    // {
-    //     let tonNumReduce = 0;
-    //     console.log('what is happening ', a, b, c)
-    //     tonNumReduce = tonNumReduce + b;
-    //     console.log(tonNumReduce);
-    //     return tonNumReduce;
-    // });
-
     let total = props1.parts.reduce((pre, cur, i) =>  pre + cur.exercises, 0);
 
     return (
