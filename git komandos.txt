@@ -11,7 +11,7 @@ git log //paskutiniai zingsniai
 npx create-react-app anecdotes //naujas reacto projektas
 npx create-react-app phonebook
 
-//paskui reikia pasitikrinti kurioje mes esame direktorijoje 
+//paskui reikia pasitikrinti kurioje mes esame direktorijoje ir tuomet
 npm run start//uzleidzia serveri localhost:30000
 
 npm install // sukuria node_modules direktorija
