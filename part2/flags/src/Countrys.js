@@ -1,4 +1,5 @@
 import React from "react";
+import Weather from "./weather";
 
 const Countrys = (props) =>
 {
@@ -28,7 +29,7 @@ const Countrys = (props) =>
                 <h2>{showCountrys[0].name.common}</h2>
                 <h6>Capital: {showCountrys[0].capital}</h6>
                 <p>{showCountrys[0].flag}</p>
-                <h6>Area: {showCountrys[0].area} m2</h6>
+                <h6>Area: {showCountrys[0].area} km2</h6>
                 <h5>Languages: </h5>
                 {OneCountryLangugeValue.map(function (ele, i)
                 {
@@ -38,6 +39,7 @@ const Countrys = (props) =>
                         </ul>
                     )
                 })}
+            <Weather capital={showCountrys[0].capital}/>
             </div>
         )
     }
