@@ -8,6 +8,9 @@ const App = () =>
   const [countrys, setCountrys] = useState([])
   const [filterValue, setfilterValue] = useState("")
   let API_URL = 'https://restcountries.com/v3.1/all'
+  let API_URL_weather=''
+  const api_key = process.env.REACT_APP_API_KEY
+  
 
   const handleFilterChange = (event) =>
   {
@@ -36,7 +39,7 @@ const App = () =>
       <form>  <input onChange={handleFilterChange} />
       </form>
       <h2><Countrys countrys={countrys} filterValue={filterValue} setfilterValue={setfilterValue}/></h2>
-
+      <p>{api_key}</p>
     </div>
   );
 }
