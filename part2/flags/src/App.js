@@ -35,7 +35,7 @@ const App = () =>
       <h2>Find country</h2>
       <form>  <input onChange={handleFilterChange} />
       </form>
-      <h2><Countrys countrys={countrys} filterValue={filterValue}/></h2>
+      <h2><Countrys countrys={countrys} filterValue={filterValue} setfilterValue={setfilterValue}/></h2>
 
     </div>
   );
