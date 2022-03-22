@@ -11,7 +11,7 @@ const Client = function (props)
     {
         if (regEx1.test(props.persons[i].name) && (regEx2.test(props.persons[i].number)))  
         {
-            showPersonNames.push(<p key={i}><strong>{props.persons[i].name}</strong>  {props.persons[i].number}</p>);
+            showPersonNames.push(<p key={i}><strong>{props.persons[i].name}</strong>  {props.persons[i].number}<button> Delete{}</button></p>);
         }
     }
     if (showPersonNames.length === 0)
