@@ -31,15 +31,16 @@ const Countrys = (props) =>
                 <p>{showCountrys[0].flag}</p>
                 <h6>Area: {showCountrys[0].area} km2</h6>
                 <h5>Languages: </h5>
+                <ul>
                 {OneCountryLangugeValue.map(function (ele, i)
                 {
                     return (
-                        <ul>
-                            <h6><li keys={i}>{ele}</li></h6>
-                        </ul>
-                    )
+                        <li key={i}>
+                            <h6>{ele}</h6>
+                        </li>)
                 })}
-            <Weather capital={showCountrys[0].capital}/>
+                </ul>
+                <Weather capital={showCountrys[0].capital}/>
             </div>
         )
     }
