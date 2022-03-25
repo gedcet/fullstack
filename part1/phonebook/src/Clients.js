@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import servicesClient from './services/servicesClient';
 
 const Client = function (props)
 {
@@ -11,7 +12,18 @@ const Client = function (props)
     {
         if (regEx1.test(props.persons[i].name) && (regEx2.test(props.persons[i].number)))  
         {
-            showPersonNames.push(<p key={i}><strong>{props.persons[i].name}</strong>  {props.persons[i].number}<button> Delete{}</button></p>);
+            showPersonNames.push(<p key={i}><strong>{props.persons[i].name}</strong>{props.persons[i].number}<button onClick={
+                function ()
+                {
+                    const kaPaspaudem = window.confirm("Ar trinsite " + props.persons[i].name)
+                    //alert(kaPaspaudem);
+                    if (kaPaspaudem === true)
+                    {
+                        servicesClient.deletePost(props.persons[i].id)
+                        props.fetchPersonFromDB()
+                   }
+                }
+            }> Delete</button></p>);
         }
     }
     if (showPersonNames.length === 0)

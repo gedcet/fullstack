@@ -21,17 +21,23 @@ const App = () =>
   const handleClick = async (event) =>
   {
     event.preventDefault();//neperkrauna puslapio
-    //console.log(event.target)
+    console.log(event.target)
     //const arrayCopyPersons = [...persons];
     //const arrayCopyNumbers = [...persons];
 
     for (let i = 0; i < persons.length; i++)
     {
-      if (newName === persons[i].name && newNumber === persons[i].number)
+     // if (newName === persons[i].name && newNumber === persons[i].number) cia vardas gali kartotis numeris ne
+     if (newName === persons[i].name)
       {
-        alert("tokia reiksme yra ")
+        let telefonoNrKeitimas = window.confirm("toks vardas yra, ar keisim jam numeri i " + event.target.value)
+        if (telefonoNrKeitimas)
+        {const insertValue = await servicesClient.updatePost(persons[i].id, {name : newName, number: newNumber})}
+        fetchPersonFromDB();
+        //alert(telefonoNrKeitimas)
         return
       }
+
     }
     //arrayCopyPersons.push({ name: newName, number: newNumber });
     //setPersons(arrayCopyPersons);
@@ -78,7 +84,7 @@ const App = () =>
       <h2>Clients:</h2>
       <h1><strong>Vardas, Pavarde: </strong>     Telefonas:</h1>
       <hr size="10"></hr>
-      <Client persons={persons} newFilterValue={newFilterValue} newFilterValueNumber={newFilterValueNumber} />
+      <Client persons={persons} newFilterValue={newFilterValue} newFilterValueNumber={newFilterValueNumber} fetchPersonFromDB={fetchPersonFromDB}/>
 
 
     </div>
