@@ -16,6 +16,8 @@ npm run start//uzleidzia serveri localhost:30000
 
 npm install // sukuria node_modules direktorija
 
+npm install express //
+
 npx json-server --port 3001 --watch db.json //uzleidzia json serveri json failams skaityti
 
 c5a6378ecaf139175755b915beae46f0 API key is https://home.openweathermap.org/api_keys
