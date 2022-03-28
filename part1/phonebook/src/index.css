@@ -1,0 +1,50 @@
+h1 {
+    color: green;
+    font-style: italic;
+}
+
+.note {
+    color: grey;
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+.error {
+    color: red;
+    background: lightgrey;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.zalias {
+    color: green;
+    background: lightgrey;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dark {
+    top: 0%;
+    right: 0%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 50%;
+}
+.dark span{
+    position: fixed; 
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    
+}

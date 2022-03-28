@@ -1,34 +1,14 @@
 {
   "persons": [
     {
-      "name": "qwe",
-      "number": "qwe",
-      "id": 15
-    },
-    {
-      "name": "petras",
-      "number": "6666",
-      "id": 17
-    },
-    {
-      "name": "petras",
-      "number": "566+2236",
-      "id": 19
-    },
-    {
-      "name": "petras",
-      "number": "566+2234",
-      "id": 20
-    },
-    {
-      "name": "jonaS",
-      "number": "23",
-      "id": 21
-    },
-    {
       "name": "",
-      "number": "6666",
-      "id": 22
+      "number": "",
+      "id": 6
+    },
+    {
+      "name": "tu",
+      "number": "888",
+      "id": 7
     }
   ]
 }

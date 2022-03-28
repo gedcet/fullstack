@@ -1,4 +1,5 @@
 import axios from "axios";
+import ErrorNotification from "../ErrorNotification";
 
 const ReadAll = async function ()
 {
@@ -19,7 +20,9 @@ const createPost = async function (obj1)
     }
     catch (err)
     {
-        console.log(err)
+        
+        console.log("create post ", err)
+        return { "error": err.message }
     }
 }
 
@@ -36,7 +39,12 @@ const deletePost = async function (id)
     }
     catch (err)
     {
-        console.log(err)
+        console.log("delete post ", err)
+        //alert("delete post ",message)
+        return {
+            "error": "trinimo klaida"
+        }
+
     }
 }
 
@@ -48,14 +56,17 @@ const updatePost = async function (id, obj1)
             method: "put",
             url: `http://localhost:3001/persons/${id}`,
             data: obj1
-            
+
         })
         //alert(`http://localhost:3001/persons/${id}`);        
         return result;
     }
     catch (err)
     {
-        console.log(err)
+        console.log("update post ", err)
+        return {
+            "error": "update klaida"
+        }
     }
 }
 

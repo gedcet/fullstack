@@ -13,22 +13,29 @@ const Client = function (props)
         if (regEx1.test(props.persons[i].name) && (regEx2.test(props.persons[i].number)))  
         {
             showPersonNames.push(<p key={i}><strong>{props.persons[i].name}</strong>{props.persons[i].number}<button onClick={
-                function ()
+                async function ()
                 {
                     const kaPaspaudem = window.confirm("Ar trinsite " + props.persons[i].name)
                     //alert(kaPaspaudem);
                     if (kaPaspaudem === true)
                     {
-                        servicesClient.deletePost(props.persons[i].id)
+                        
+                        await servicesClient.deletePost(props.persons[i].id)
                         props.fetchPersonFromDB()
-                   }
+                        props.setnotificationMessage(props.persons[i].name + " su numeriu " + props.persons[i].number + " istrintas")
+                        setTimeout(() =>
+                        {
+                            props.setnotificationMessage(null)
+                        }, 5000);
+
+                    }
                 }
             }> Delete</button></p>);
         }
     }
     if (showPersonNames.length === 0)
     {
-        showPersonNames.push(<p key={0}>Nieko nerasta </p>);
+        showPersonNames.push(<p key={0}>Nieko nera telefonu knygoje </p>);
     }
     return (
         <div>
