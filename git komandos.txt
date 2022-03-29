@@ -2,26 +2,45 @@ git add * //adina visus failus i gita
 git commit -m "1.11" // commitina su komentaru vietoje
 git push  //cia jau deda i debesi
 
+git pull //gauti failus is debesio
+
 git config -l 
 
 git rm -* //resetina
 
+git reset -hard //
+
 git log //paskutiniai zingsniai
 
-npx create-react-app anecdotes //naujas reacto projektas
-npx create-react-app phonebook
 
+npx create-react-app anecdotes //naujas reacto projektas
 //paskui reikia pasitikrinti kurioje mes esame direktorijoje ir tuomet
 npm run start//uzleidzia serveri localhost:30000
 
 npm install // sukuria node_modules direktorija
 
+npm install nodemon // perkrauna node serveri kad nereiektu rankiniu budu
+npx nodemon app.mjs //uzleidzia nodemon serveri arba npm run dev
+
+
+npm install morgan //morgano kuris terminalo lange matysim serverio atsakymus
+tuomet faile idedam:
+import morgan from "morgan"
+ir
+app.use(morgan("tiny"))
+
+
 npx json-server --port 3001 --watch db.json //uzleidzia json serveri json failams skaityti
 
+npm run build //ikrauna visa projekta i direktorija ikelimui i debesi
+
+npx http-server ./build //paleidzia parasta projekta su http serveriu
+
+PVZ su API
 c5a6378ecaf139175755b915beae46f0 API key is https://home.openweathermap.org/api_keys
 
 https://api.openweathermap.org/data/2.5/weather?q=vilnius&appid=c5a6378ecaf139175755b915beae46f0
 
-git pull//gauti failus is debesio
+http://test-env.eba-rznvtt3w.eu-central-1.elasticbeanstalk.com/
 
-git config 
+type nul > app.js //sukuria tuscia faila dos lange
