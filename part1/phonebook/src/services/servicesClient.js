@@ -3,7 +3,7 @@ import ErrorNotification from "../ErrorNotification";
 
 const ReadAll = async function ()
 {
-    const result = await axios.get(`${"http://localhost:3001/persons"}`)
+    const result = await axios.get(`${"http://localhost:3001/api/persons"}`)
     return result;
 }
 
@@ -13,7 +13,7 @@ const createPost = async function (obj1)
     {
         const result = await axios({
             method: "post",
-            url: "http://localhost:3001/persons",
+            url: "http://localhost:3001/api/persons",
             data: obj1
         })
         return result;
@@ -32,9 +32,9 @@ const deletePost = async function (id)
     {
         const result = await axios({
             method: "delete",
-            url: `http://localhost:3001/persons/${id}`
+            url: `http://localhost:3001/api/persons/${id}`
         })
-        //alert(`http://localhost:3001/persons/${id}`);        
+        //alert(`http://localhost:3001/api/persons/${id}`);        
         return result;
     }
     catch (err)
@@ -54,11 +54,11 @@ const updatePost = async function (id, obj1)
     {
         const result = await axios({
             method: "put",
-            url: `http://localhost:3001/persons/${id}`,
+            url: `http://localhost:3001/api/persons/${id}`,
             data: obj1
 
         })
-        //alert(`http://localhost:3001/persons/${id}`);        
+        //alert(`http://localhost:3001/api/persons/${id}`);        
         return result;
     }
     catch (err)

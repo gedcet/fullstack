@@ -8,7 +8,7 @@ import BlackWindow from './BlackWindow';
 const App = () =>
 {
   const [persons, setPersons] = useState([])
-  let apiUrl = `http://localhost:3001/persons`
+  let apiUrl = `http://localhost:3001/api/persons`
 
   const fetchPersonFromDB = async () =>
   {
