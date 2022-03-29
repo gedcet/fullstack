@@ -44,3 +44,4 @@ https://api.openweathermap.org/data/2.5/weather?q=vilnius&appid=c5a6378ecaf13917
 http://test-env.eba-rznvtt3w.eu-central-1.elasticbeanstalk.com/
 
 type nul > app.js //sukuria tuscia faila dos lange
+
