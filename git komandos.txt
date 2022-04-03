@@ -47,3 +47,14 @@ http://test-env.eba-rznvtt3w.eu-central-1.elasticbeanstalk.com/
 type nul > app.js //sukuria tuscia faila dos lange
 
 git config 
+
+
+HEROKU:
+
+heroku login
+heroku git:clone -a telefonu-knyga 
+(gali buti jog reiks parasyti heroku create telefonu-knyga)
+cd telefonu-knyga
+git add .
+git commit -am "make it better"
+git push heroku main
