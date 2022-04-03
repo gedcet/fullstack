@@ -58,3 +58,9 @@ cd telefonu-knyga
 git add .
 git commit -am "make it better"
 git push heroku main
+
+//jei paprastas html
+sukurti index.html
+<?php include_once("index.html"); ?>
+ir 
+echo '{}' > composer.json 
