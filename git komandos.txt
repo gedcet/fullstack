@@ -75,6 +75,8 @@ sukurti index.html
 <?php include_once("index.html"); ?>
 ir
 echo '{}' > composer.json
+ir 
+echo '{}' > composer.json 
 
 JEI NERA GITO KOMPE:
 parsisiunciam is https://git-scm.com/download/win ir suinstaliuojam
