@@ -128,6 +128,7 @@ let IdedamasNaujasPersonas = function (request, responce)
 app.use(cors())
 app.use(express.json())
 app.use(morgan("tiny"))
+app.use(express.static("./build"))//mokina noda dirbti su build direktorija
 
 
 //end points

@@ -4,7 +4,7 @@ git push  //cia jau deda i debesi
 
 git pull //gauti failus is debesio
 
-git config -l 
+git config -l
 
 git rm -* //resetina
 
@@ -12,6 +12,14 @@ git reset -hard //
 
 git log //paskutiniai zingsniai
 
+//jei is naujo kompo
+git config --local user.email "gedcet@gmail.com"
+git config --local user.name "gedcet"
+git config --local credential.helper "store --file .git/credentials"
+
+
+perziurim ar yra slaptazodziai
+git config --local --list
 
 npx create-react-app anecdotes //naujas reacto projektas
 //paskui reikia pasitikrinti kurioje mes esame direktorijoje ir tuomet
@@ -30,15 +38,18 @@ ir
 app.use(morgan("tiny"))
 
 npm install express //
+%npm% install cors
 
-npx json-server --port 3001 --watch db.json //uzleidzia json serveri json failams skaityti
+npx json-server --port 3001 --watch db.json //uzleidzia json serveri
+json failams skaityti
 
 npm run build //ikrauna visa projekta i direktorija ikelimui i debesi
 
 npx http-server ./build //paleidzia parasta projekta su http serveriu
 
 PVZ su API
-c5a6378ecaf139175755b915beae46f0 API key is https://home.openweathermap.org/api_keys
+c5a6378ecaf139175755b915beae46f0 API key is
+https://home.openweathermap.org/api_keys
 
 https://api.openweathermap.org/data/2.5/weather?q=vilnius&appid=c5a6378ecaf139175755b915beae46f0
 
@@ -46,13 +57,13 @@ http://test-env.eba-rznvtt3w.eu-central-1.elasticbeanstalk.com/
 
 type nul > app.js //sukuria tuscia faila dos lange
 
-git config 
+git config
 
 
 HEROKU:
 
 heroku login
-heroku git:clone -a telefonu-knyga 
+heroku git:clone -a telefonu-knyga
 (gali buti jog reiks parasyti heroku create telefonu-knyga)
 cd telefonu-knyga
 git add .
@@ -62,5 +73,25 @@ git push heroku main
 //jei paprastas html
 sukurti index.html
 <?php include_once("index.html"); ?>
-ir 
-echo '{}' > composer.json 
+ir
+echo '{}' > composer.json
+
+JEI NERA GITO KOMPE:
+parsisiunciam is https://git-scm.com/download/win ir suinstaliuojam
+is PS (powershell pereiti i cmd) rasom CMD
+
+vs codo terminalo lange (cmd) nurod git.exe failo kelia:
+C:\Users\Public\JP-21>set git=C:\Users\3.3\Downloads\PortableGit\bin\git.exe
+ir paleidziam, git pasileidzia %git%
+
+isikeliam failus is git saugyklos
+C:\Users\Public\JP-21>%git% clone https://github.com/gedcet/fullstack/
+
+greiciausiai nebus ir node.exe ji irgi reikia parsiusti
+pvz: https://nodejs.org/en/download/
+
+sukuriam kintamaji node:
+set node=C:\Users\3.3\Downloads\NodeJSPortable\App\NodeJS\node.exe
+ir kintamaji npm
+set npm=C:\Users\3.3\Downloads\NodeJSPortable\Data\npm.cmd
+
