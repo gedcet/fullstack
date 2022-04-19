@@ -1,3 +1,5 @@
+const app = require('../app.js')
+
 app.get('/api/blogs', (request, response) =>
 {
     Blog
