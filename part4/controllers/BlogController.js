@@ -1,24 +1,46 @@
+const Blog = require('../models/modelBlog.js')
 const app = require('../app.js')
 
-app.get('/api/blogs', (request, response) =>
+const getAllrecord = function (request, response)
 {
     Blog
         .find({})
-        .then(blogs =>
+        .then((result, error) =>
         {
-            response.json(blogs)
+            if (error !== undefined)
+            {
+                response.status(408)
+                response.end()
+            }
+            else
+            {
+                response.json(result)
+            }
         })
-})
+}
 
-app.post('/api/blogs', (request, response) =>
+const AddRecord = function (request, response) 
 {
-    const blog = new Blog(request.body)
-    blog
-        .save()
-        .then(result =>
-        {
-            response.status(201).json(result)
+    Blog
+        .create({
+            "title": request.body.title,
+            "author": request.body.author,
+            "url": request.body.url,
+            "likes": request.body.likes
         })
-})
+        .then((result, error) =>
+        {
+            if (error !== undefined)
+            {
+                response.status(401)
+                response.end()
+            }
+            else
+            {
+                response.status(208)
+                response.json(result)
+            }
+        })
+}
 
-module.exports = app
+module.exports = { getAllrecord, AddRecord }

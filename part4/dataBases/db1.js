@@ -4,18 +4,18 @@ const mongoUrl = 'mongodb+srv://gedcet:Epmc740@cluster0.pcqn1.mongodb.net/myFirs
 
 let connectionID = mongoose.createConnection(mongoUrl)
 
-async function connectToDB()
-{
-    try
-    {
-        await connectionID.connect()
-        console.log("connected ... ")
-    }
-    catch (err)
-    {
-        console.log("open db error ", err)
-    }
-}
+// async function connectToDB()
+// {
+//     try
+//     {
+//         await connectionID.connect()
+//         console.log("connected ... ")
+//     }
+//     catch (err)
+//     {
+//         console.log("open db error ", err)
+//     }
+// }
 
 async function closeDB()
 {
@@ -43,4 +43,4 @@ async function dropDB()
     }
 }
 
-module.exports = { connectionID, connectToDB, closeDB, dropDB }
+module.exports = { connectionID, closeDB, dropDB }
