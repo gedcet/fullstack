@@ -1,4 +1,4 @@
-const mostBlogs = (array) =>
+const mostLikes = (array) =>
 {
     const authors = []
 
@@ -6,7 +6,7 @@ const mostBlogs = (array) =>
     {
         const searchInAuthorsResult = authors.find(function (ele)
         {
-            return (ele.author === array[i].author)
+            return (ele.name === array[i].author)
         })
 
         if (searchInAuthorsResult === undefined)// jei searchInAuthorsResult = undefined nerasta prideda i masyva
@@ -14,26 +14,27 @@ const mostBlogs = (array) =>
             //authors.push(array[i].author) //
             authors.push({
                 "author": array[i].author,
-                "blogs": 1
+                "likes": array[i].likes
             })
         }
         else
         {
-            searchInAuthorsResult.blogs++
+            searchInAuthorsResult.likes=searchInAuthorsResult.likes + array[i].likes
+            //searchInAuthorsResult.likes+=array[i].likes cia arba virsuje arba sioje eiluteje galima taip rasyti
         }
         // console.log(authors)
     }
 
-    let authorWithBiggestBlog = authors[0]
+    let authorWithmostLikes = authors[0]
     for (let i = 1; i < authors.length; i++)
     {
-        if (authors[i].blogs > authorWithBiggestBlog.blogs)
+        if (authors[i].likes > authorWithmostLikes.likes)
         {
-            authorWithBiggestBlog = authors[i]
-            console.log(authorWithBiggestBlog)
+            authorWithmostLikes = authors[i]
+            console.log(authorWithmostLikes)
         }
     }
-    return authorWithBiggestBlog
+    return authorWithmostLikes
 }
 
-module.exports = mostBlogs
+module.exports = mostLikes

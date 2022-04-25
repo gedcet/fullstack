@@ -1,6 +1,6 @@
-const total_blogs = require('../utils/mostBlogs.js')
+const biggestLikes = require('../utils/mostLikes.js')
 
-test('skaiciuojam autorius ', () => 
+test('skaiciuojam laikus ', () => 
 {
     const blogs = [
         {
@@ -32,8 +32,7 @@ test('skaiciuojam autorius ', () =>
         }
     ]
 
-    const result1 = total_blogs(blogs)
+    const result1 = biggestLikes(blogs)
 
-    expect(result1).toEqual({"author": "henia1", "blogs": 2})
+    expect(result1).toEqual({"author": "henia2", "likes": 50})
 })
-
