@@ -2,7 +2,7 @@ const db1 = require('../dataBases/db1.js')
 const blog = require('../models/modelBlog.js')
 const total_likes = require('../utils/totalLikes.js')
 const best_bloger = require('../utils/highestBlog.js')
-const blogerioAntraste = require('../utils/highestBlog.js')
+
 
 test('valom ir nauja kolekcija sukuriam ', async () => 
 {
