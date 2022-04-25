@@ -1,9 +1,5 @@
-const supertest = require('supertest')
-const app = require('../app')
 const db1 = require('../dataBases/db1')
 const blog = require('../models/modelBlog')
-
-const supertest1 = supertest(app.app)
 
 test('valom ir nauja kolekcija sukuriam ', async () => 
 {
@@ -38,18 +34,11 @@ test('valom ir nauja kolekcija sukuriam ', async () =>
         })
 })
 
-test('paskaiciuojam kiek elementu yra db`se', async () =>
+test('', async () =>
 {
-    const temp1 = await supertest1.get('/api/blogs')
-    //console.log("temp1 ilgis ", temp1.body.length)
-    app.lisnerID.close()
+    const temp1 = await blog.find()
+    console.log("temp1 ats ", temp1)
+    
     await db1.closeDB()
-    expect(temp1.body.length).toEqual(4)
+    
 })
-
-   // supertest1.get('/api/notes').then(function (result, err)
-    // {
-    //     console.log("supertest ats. ", result.body)
-    //     app.lisnerID.close()
-    //     mongoose.closeDB()
-    // })
