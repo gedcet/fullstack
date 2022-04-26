@@ -97,3 +97,19 @@ set node=C:\Users\3.3\Downloads\NodeJSPortable\App\NodeJS\node.exe
 ir kintamaji npm
 set npm=C:\Users\3.3\Downloads\NodeJSPortable\Data\npm.cmd
 
+//jest testu paleidimas
+
+npx jest
+
+//jei norim paleist jest konkretu faila
+npx jest ./tests/mostblogs.test.js
+
+metodas, blokas{}, objektai, savybes, objekto vardas, atributas, reiksme
+react komponentas (per props perduoda teksta, funkcijas)
+
+//vieno testo paleidimas absoliutiniu keliu
+"D:\install\VSCode\VSCode_bundle\node\node.exe" "D:\install\VSCode\VSCode_bundle\node\node_modules\jest\bin\jest.js" "dummy.test.js"
+arba
+"D:/install/VSCode/VSCode_bundle/node/node.exe" "D:/install/VSCode/VSCode_bundle/node/node_modules/jest/bin/jest.js" "dummy.test.js"
+arba
+"D:\\install\\VSCode\\VSCode_bundle\node\node.exe" "D:\\install\\VSCode\\VSCode_bundle\node\node_modules\\jest\bin\\jest.js" "dummy.test.js"
