@@ -32,12 +32,12 @@ const AddRecord = function (request, response)
         {
             if (error !== undefined)
             {
-                response.status(401)
+                response.status(408)
                 response.end()
             }
             else
             {
-                response.status(208)
+                response.status(201)
                 response.json(result)
             }
         })
