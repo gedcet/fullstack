@@ -1,69 +1,72 @@
 const supertest = require('supertest')
 const app = require("../app.js")
-const { closeDB, dropDB } = require("../dataBases/db1")
-const blog = require("../models/modelBlog")
+const database_1 = require("../dataBases/db1")
+const model_blog = require("../models/modelBlog")
 
-describe("get api/blogs ", function ()
-{
-    const supertest1 = supertest(app.app)//
-    let result
-
-    const masyvas1 = [{
-        "title": "antraste1",
-        "author": "henia1",
-        "url": "web",
-        "likes": 150
+const initial_blogs = [
+    {
+        "title": "title_1",
+        "author": "author_1",
+        "url": "url_1",
+        "likes": 1
     },
     {
-        "title": "antraste2",
-        "author": "henia2",
-        "url": "webas",
-        "likes": 50
+        "title": "title_2",
+        "author": "author_2",
+        "url": "url_2",
+        "likes": 2
+    },
+    {
+        "title": "title_3",
+        "author": "author_3",
+        "url": "url_3",
+        "likes": 3
     }
-    ]
+]
 
-    beforeAll(async function ()
-    {
-        await dropDB()//istrinam kolekcija
-        await blog.create(masyvas1[0])
-        await blog.create(masyvas1[1])
-    })
+const supertest_1 = supertest(app.app)
 
-    test("ar grazina 200 koda ", async function ()
-    {
-        result = await supertest1.get("/api/blogs")
-        //console.log("masyvas visas  ", result.body)
-        expect(result.statusCode === 200).toBeTruthy()
-    })
+beforeAll(async () =>
+{
+    // await database_1.drop_db()//alternative 1 delete db
 
-    test("ar grazina masyva ", async function ()
-    {
-        expect(result.body.constructor === Array).toBeTruthy()
-        //expect(result.body.length === 2).toBeTruthy()
-        //expect(result.body instanceof Array).toBeTruthy()
-    })
+    await model_blog.deleteMany()//alternative 2 delete all records in colection
 
-    test("ar masyvas bus is dvieju elementu ", async function ()
-    {
-        expect(result.body.length === 2).toBeTruthy()
-    })
-
-    test("ar masyvo reiksmes neiskraipytos ", async function ()
-    {
-        expect(result.body[0].title === masyvas1[0].title).toBeTruthy()
-        expect(result.body[0].author === masyvas1[0].author).toBeTruthy()
-        expect(result.body[0].url === masyvas1[0].url).toBeTruthy()
-        expect(result.body[0].likes === masyvas1[0].likes).toBeTruthy()
-
-        expect(result.body[1].title === masyvas1[1].title).toBeTruthy()
-    })
-
-    afterAll(async function ()
-    {
-        await closeDB()
-        app.lisnerID.close()
-    })
-
-
+    await model_blog.create(initial_blogs[0])
+    await model_blog.create(initial_blogs[1])
+    await model_blog.create(initial_blogs[2])
 })
 
+afterAll(async () =>
+{
+    await database_1.closeDB()
+    app.lisnerID.close()
+})
+
+describe("get blogs (by http reqest)", () =>
+{
+    let collection_dump_1
+    let http_response
+
+    test("blogs are successfuly dumped from database to collection_dump_1", async () =>
+    {
+        collection_dump_1 = await model_blog.find()
+        collection_dump_1 = collection_dump_1.map(ele => ele.toJSON())//required to prevent buggy behaviour on automatic conversion
+    })
+
+    test("HTTP request is successfuly send", async () =>
+    {
+        http_response = await supertest_1
+            .get(`/api/blogs`)
+    })
+
+    test("server respose status code is 200", async () =>
+    {
+        expect(http_response.statusCode).toEqual(200)
+    })
+
+    test("server respose body equals collection_dump_1", async () =>
+    {
+        expect(http_response.body).toEqual(collection_dump_1)
+    })
+})
