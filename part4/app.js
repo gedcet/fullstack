@@ -13,10 +13,10 @@ app.use(express.json())
 
 //endpoint
 app.get("/api/blogs", blogController.getAllrecord)
-app.post("/api/create", blogController.AddRecord)
+app.post("/api/blogs", blogController.AddRecord)
 
 const PORT = 3003
-const lisnerID = app.listen(PORT, "127.0.0.1",() =>
+const lisnerID = app.listen(PORT, "127.0.0.1", () =>
 {
   //console.log(`Server running on port ${PORT}`)
 })
