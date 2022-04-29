@@ -27,6 +27,14 @@ const initialBlogs =
         }
     ]
 
+const additionBlog =
+{
+    "title": "antraste4",
+    "author": "autorius4",
+    "url": "keiciam http://google.lt/4",
+    "likes": 4
+}
+
 beforeAll(async () =>
 {
     await modelBlog.deleteMany()
@@ -43,22 +51,13 @@ afterAll(async () =>
     express1Listiner.close()
 })
 
-describe("get all blogs ", () =>
+describe("delete one blog by id ", () =>
 {
     let requestResult
     let collectionDump1
+    let collectionDump2
 
-    test("request succsefully send ", async () =>
-    {
-        requestResult = await supertest1.get("/api/blogs")
-    })
-
-    test("request status code 200", () =>
-    {
-        expect(requestResult.statusCode).toBe(200)
-    })
-
-    test("patikrinam ar ikelti ir db irasai vienodi, collection sucsesfully dumped ", async () =>
+    test("dump1 succsefully readed ", async () =>
     {
         collectionDump1 = await modelBlog.find()
 
@@ -67,9 +66,36 @@ describe("get all blogs ", () =>
             collectionDump1[i] = collectionDump1[i].toJSON()
             collectionDump1[i]._id = collectionDump1[i]._id.toString()
         }
-
-        expect(collectionDump1).toEqual(requestResult.body)
     })
+
+    test("delete request succsefully ", async () =>
+    {
+
+        requestResult = await supertest1.delete(`/api/blogs/${collectionDump1[0]._id}`)
+    })
+
+    test("request status code 200", () =>
+    {
+        expect(requestResult.statusCode).toBe(200)
+    })
+
+    test("dump2 succsefully readed  ", async () =>
+    {
+        collectionDump2 = await modelBlog.find()
+
+        for (let i = 0; i < collectionDump2.length; i++)
+        {
+            collectionDump2[i] = collectionDump2[i].toJSON()
+            collectionDump2[i]._id = collectionDump2[i]._id.toString()
+        }
+    })
+
+    test("dump1 equals dump2 ", () =>
+    {
+        collectionDump1.splice(0, 1)
+        expect(collectionDump1).toEqual(collectionDump2)
+    })
+
 })
 
 
