@@ -22,7 +22,7 @@
         "request": "launch",
         "runtimeExecutable": "D:\\install\\VSCode\\VSCode_bundle\\node\\node.exe",
         "runtimeArgs": [
-            "--experimental-vm-modules"
+            //"--experimental-vm-modules"
         ],
         "program": "D:\\install\\VSCode\\VSCode_bundle\\node\\node_modules\\jest\\bin\\jest.js",
         "args": [
