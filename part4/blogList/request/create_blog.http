@@ -2,9 +2,9 @@ POST http://127.0.0.1:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "antraste2",
-    "author": "autorius2",
+    "title": "antraste4",
+    "author": "autorius4",
     "url": "http://google.lt/",
-    "likes": 1
+    "likes": 13
 
 }

@@ -113,3 +113,11 @@ arba
 "D:/install/VSCode/VSCode_bundle/node/node.exe" "D:/install/VSCode/VSCode_bundle/node/node_modules/jest/bin/jest.js" "dummy.test.js"
 arba
 "D:\\install\\VSCode\\VSCode_bundle\node\node.exe" "D:\\install\\VSCode\\VSCode_bundle\node\node_modules\\jest\bin\\jest.js" "dummy.test.js"
+
+mongo db komandos
+
+show databases //parodo visas kolekcijas
+
+db.testai.questions.find() //parodo visus duomenis questions kolekcijoje
+
+db.questions.deleteMany({}) //istrina visus duomenis is questions kolekcijos
