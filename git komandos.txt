@@ -16,7 +16,7 @@ git log //paskutiniai zingsniai
 git config --local user.email "gedcet@gmail.com"
 git config --local user.name "gedcet"
 git config --local credential.helper "store --file .git/credentials"
-echo https://gedcet:'slaptazodis github token'@github.com>.git/credantials
+echo https://gedcet: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 @github.com>.git/credantials
 
 perziurim ar yra slaptazodziai
 git config --local --list
