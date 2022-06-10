@@ -3,6 +3,7 @@ git commit -m "1.11" // commitina su komentaru vietoje
 git push  //cia jau deda i debesi
 
 git pull //gauti failus is debesio
+git pull https://github.com/gedcet/avektorius saka //gauti failus is direktorijos ir šakos `saka`
 
 git config -l
 
