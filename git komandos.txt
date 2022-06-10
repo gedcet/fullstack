@@ -2,6 +2,8 @@ git add * //adina visus failus i gita
 git commit -m "1.11" // commitina su komentaru vietoje
 git push  //cia jau deda i debesi
 
+git branch //pasitikrinam ant kurios sakos sedim
+git checkout saka //persedam ant `saka` shakos
 git pull //gauti failus is debesio
 git pull https://github.com/gedcet/avektorius saka //gauti failus is direktorijos ir šakos `saka`
 
