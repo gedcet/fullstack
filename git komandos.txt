@@ -21,6 +21,7 @@ git config --local --list
 git config --system --list
 
 //jei is naujo kompo
+git init
 git config --local user.email "gedcet@gmail.com"
 git config --local user.name "gedcet"
 git config --local credential.helper "store --file .git/credentials"
