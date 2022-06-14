@@ -25,7 +25,7 @@ git init
 git config --local user.email "gedcet@gmail.com"
 git config --local user.name "gedcet"
 git config --local credential.helper "store --file .git/credentials"
-echo https://gedcet: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@github.com/>.git/credantials
+echo https://gedcet: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@github.com/>.git/credantials
 
 perziurim ar yra slaptazodziai
 git config --local --list
