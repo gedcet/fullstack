@@ -140,3 +140,4 @@ show databases //parodo visas kolekcijas
 db.testai.questions.find() //parodo visus duomenis questions kolekcijoje
 
 db.questions.deleteMany({}) //istrina visus duomenis is questions kolekcijos
+mongodb+srv://gedcet:Epmc740@cluster0.pcqn1.mongodb.net/skelbimai?authSource=admin&replicaSet=atlas-89lzk0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true
