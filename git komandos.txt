@@ -27,9 +27,14 @@ git config --local user.name "gedcet"
 git config --local credential.helper "store --file .git/credentials"
 echo https://gedcet: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@github.com/>.git/credentials
 
-git remote add rem1 https://github.com/gedcet/skelbimai //kintsmsjsm rem1 priskiriam adresa kad visa laik nevedziot
-git checkout -b main //sukuriam sak su vardu main
-git fetch rem1 // parsisiunciam visa direktorija i savo kompa
+//kintamajam rem1 priskiriam adresa kad visa laik nevedziot
+git remote add rem1 https://github.com/gedcet/skelbimai 
+
+ //sukuriam sak su vardu main
+git checkout -b main
+
+ // parsisiunciam visa direktorija i savo kompa
+git fetch rem1
 git remote // pasiziurim kintamuosiuis
 
 perziurim ar yra slaptazodziai
