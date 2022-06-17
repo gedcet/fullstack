@@ -27,6 +27,10 @@ git config --local user.name "gedcet"
 git config --local credential.helper "store --file .git/credentials"
 echo https://gedcet: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@github.com/>.git/credentials
 
+git remote add rem1 https://github.com/gedcet/skelbimai 
+git checkout -b main 
+git fetch rem1
+
 perziurim ar yra slaptazodziai
 git config --local --list
 
