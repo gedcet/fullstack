@@ -66,6 +66,8 @@ npm run build //ikrauna visa projekta i direktorija ikelimui i debesi
 
 npx http-server ./build //paleidzia parasta projekta su http serveriu
 
+npm list //parodo suinstaliuotus packeages
+
 PVZ su API
 c5a6378ecaf139175755b915beae46f0 API key is
 https://home.openweathermap.org/api_keys
@@ -74,10 +76,7 @@ https://api.openweathermap.org/data/2.5/weather?q=vilnius&appid=c5a6378ecaf13917
 
 http://test-env.eba-rznvtt3w.eu-central-1.elasticbeanstalk.com/
 
-type nul > app.js //sukuria tuscia faila dos lange
-
-git config
-
+type nul > app.js //sukuria tuscia app.js faila dos lange
 
 HEROKU:
 
