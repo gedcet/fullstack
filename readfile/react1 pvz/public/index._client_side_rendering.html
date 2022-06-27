@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 2022 01 18</title>
+    <style>
+        #div1 {
+            display: grid;
+            grid-template-columns: repeat(30, 20px);
+            grid-template-rows: repeat(30, 20px);
+            grid-gap: 1px;
+        }
+
+        .off {
+            background-color: #c2d190;
+        }
+
+        .on {
+            background-color: gray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="div1"></div>
+
+
+    <script>
+        const pixels = [];
+        for (let i = 0; i < 900; i++)
+        {
+            const div = document.createElement("div");
+            div.className = "off";
+            pixels.push(div);
+            document.getElementById("div1").appendChild(div);
+        }
+
+        
+
+        const render = function ()
+        {
+            const XMLHttpRequest1 = new XMLHttpRequest();
+            XMLHttpRequest1.open("GET", "/api_client_side_rendering/get_position", false);
+            XMLHttpRequest1.send();
+            //piesiam lauka 30 x 30 is divu
+            const position = parseInt(XMLHttpRequest1.responseText);
+            //document.getElementById("div1").innerHTML = "";
+            //const result1 = parseInt(XMLHttpRequest1.responseText);
+
+            for (let i = 0; i < 900; i++)
+            {
+                if (i === position)
+                {
+                    pixels[i].className = "on";
+                }
+                else
+                {
+                    pixels[i].className = "off";
+                }
+            }
+            setTimeout(render, 100);
+        }
+
+        render();
+
+        document.addEventListener('keydown', function (arg1)
+        {
+            const player_name = document.getElementById("player_name").value;
+            console.log(arg1);
+
+            if (arg1.key === "ArrowRight")
+            {
+                const XMLHttpRequest1 = new XMLHttpRequest()
+                XMLHttpRequest1.open("GET", "/api_client_side_rendering/right", false);
+                XMLHttpRequest1.send();
+                console.log(XMLHttpRequest1.responseText);
+            }
+            else if (arg1.key === "ArrowLeft")
+            {
+                const XMLHttpRequest1 = new XMLHttpRequest()
+                XMLHttpRequest1.open("GET", "/api_client_side_rendering/left", false);
+                XMLHttpRequest1.send();
+                console.log(XMLHttpRequest1.responseText);
+            }
+            else if (arg1.key === "ArrowUp")
+            {
+                const XMLHttpRequest1 = new XMLHttpRequest()
+                XMLHttpRequest1.open("GET", "/api_client_side_rendering/up", false);
+                XMLHttpRequest1.send();
+                console.log(XMLHttpRequest1.responseText);
+            }
+            else if (arg1.key === "ArrowDown")
+            {
+                const XMLHttpRequest1 = new XMLHttpRequest()
+                XMLHttpRequest1.open("GET", "/api_client_side_rendering/down", false);
+                XMLHttpRequest1.send();
+                console.log(XMLHttpRequest1.responseText);
+            }
+
+        })
+    </script>
+</body>
+
+</html>
